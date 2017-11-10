@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbalcort <sbalcort@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 16:59:39 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/10/02 14:29:50 by sbalcort         ###   ########.fr       */
+/*   Updated: 2017/11/10 11:08:09 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wolf3d.h"
+#include "../inc/wolf3d.h"
 
 void			create_map_cont(char **map)
 {
@@ -73,6 +73,13 @@ void			map(t_env *env)
 	while (++i < 24)
 		free(test[i]);
 }
+
+/*
+**	Sets position and the direction of player
+**	Sets rotation speed and movement speed
+**	Uses map function to set map (Function above)
+**
+*/
 
 int				main(void)
 {

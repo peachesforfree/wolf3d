@@ -3,53 +3,63 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sbalcort <sbalcort@student.42.us.org>      +#+  +:+       +#+         #
+#    By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/31 11:42:23 by sbalcort          #+#    #+#              #
-#    Updated: 2017/10/02 14:43:48 by sbalcort         ###   ########.fr        #
+#    Updated: 2017/11/10 11:58:06 by gaguirre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 
-CC = gcc
+CFLAGS = -Wall -Wextra -Werror -g
 
-FLAGS = -Wall -Werror -Wextra
+SRC_FILES = main.c declarations.c dda_algorithm.c \
+						color.c mlx_key_events.c mlx_stuff.c \
+						raycasting.c
 
-LIBS = libs/minilibx/libmlx.a\
-	   libs/libft/libft.a
+OBJ_FILES = $(SRC_FILES:.c=.o)
 
-SRCS = main.c color.c \
-	   dda_algorithm.c \
-	   mlx_key_events.c \
-	   mlx_stuff.c \
-	   raycasting.c \
-	   declarations.c
+SRC_DIR = ./src/
+OBJ_DIR = ./obj/
+INC_DIR = ./incl/
+MLX_DIR = ./libs/minilibx/
+LIBFT_DIR = ./libs/libft/
 
-OBJS = $(SRCS:.c=.o)
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+MLX = $(addprefix $(MLX_DIR), libmlx.a)
+LIBFT = $(addprefix $(LIBFT_DIR), libft.a)
 
-INC = .
+LINK = -L $(MLX_DIR) -L $(LIBFT_DIR) \
+				-lmlx -lft -framework OpenGL -framework AppKit
 
-FRAMEWORKS = -framework OpenGl -framework AppKit
+all: obj $(LIBFT) $(MLX) $(NAME)
 
-all: $(NAME)
-	@$(CC) $(FLAGS) -o $(NAME) $(SRCS) -I. $(LIBS) $(FRAMEWORKS)
+obj:
+	@mkdir -p $(OBJ_DIR)
 
-$(NAME):
-	@make -C libs/libft
-	@make -C libs/minilibx
+$(OBJ_DIR)%.o:$(SRC_DIR)%.c
+	@gcc $(CFLAGS) -I $(MLX_DIR) -I $(LIBFT_DIR) -I $(INC_DIR) -o $@ -c $<
 
-debug:
-	@$(CC) -g $(FLAGS) -o $(NAME) $(SRCS) -I. $(LIBS) $(FRAMEWORKS)
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
+
+$(MLX):
+	@make -C $(MLX_DIR)
+
+$(NAME): $(OBJ)
+	@gcc $(OBJ) $(LINK) -lm -o $(NAME)
 
 clean:
-	@/bin/rm -f rm $(NAME)
-	@make -C libs/libft/ clean
-	@make -C libs/minilibx/ clean
+	@rm -rf $(OBJ_DIR)
+	@make -C $(LIBFT_DIR) clean
+	@make -C $(MLX_DIR) clean
 
 fclean: clean
-	@/bin/rm -f rm $(NAME)
-	@make -C libs/libft/ fclean
-	@make -C libs/minilibx/ clean
+	@rm -f $(NAME)
+	@make -C $(LIBFT_DIR) fclean
 
-re:fclean all
+re: fclean all
+
+.PHONY: clean fclean all re
