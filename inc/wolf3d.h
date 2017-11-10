@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wolf3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbalcort <sbalcort@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:52:10 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/10/02 14:32:55 by sbalcort         ###   ########.fr       */
+/*   Updated: 2017/11/10 11:55:17 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "libs/minilibx/mlx.h"
+# include "../libs/minilibx/mlx.h"
 # include <math.h>
-# include "libs/libft/libft.h"
+# include "../libs/libft/libft.h"
+# include "keys.h"
 # define WIN_X 1000
 # define WIN_Y 1000
 # define MAPWIDTH 24

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbalcort <sbalcort@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 23:09:21 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/10/01 23:09:27 by sbalcort         ###   ########.fr       */
+/*   Updated: 2017/11/10 14:24:32 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wolf3d.h"
+#include "../inc/wolf3d.h"
 
 void	color_selection(t_env *env)
 {

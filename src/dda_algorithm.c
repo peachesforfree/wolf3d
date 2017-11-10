@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   dda_algorithm.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbalcort <sbalcort@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 23:11:24 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/10/01 23:14:29 by sbalcort         ###   ########.fr       */
+/*   Updated: 2017/11/10 11:50:46 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wolf3d.h"
+#include "../inc/wolf3d.h"
 
 void		dda_algorithm(t_env *env)
 {
