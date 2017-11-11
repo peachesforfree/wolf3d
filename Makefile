@@ -6,7 +6,7 @@
 #    By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/31 11:42:23 by sbalcort          #+#    #+#              #
-#    Updated: 2017/11/10 11:58:06 by gaguirre         ###   ########.fr        #
+#    Updated: 2017/11/10 21:14:07 by gaguirre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = wolf3d
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRC_FILES = main.c declarations.c dda_algorithm.c \
-						color.c mlx_key_events.c mlx_stuff.c \
+						color.c movement.c mlx_stuff.c \
 						raycasting.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)

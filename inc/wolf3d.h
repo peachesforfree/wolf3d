@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:52:10 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/10 11:55:17 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/10 21:20:03 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <math.h>
 # include "../libs/libft/libft.h"
 # include "keys.h"
-# define WIN_X 1000
-# define WIN_Y 1000
+# define WIN_X 1080
+# define WIN_Y 900
 # define MAPWIDTH 24
 # define MAPHEIGHT 20
 # define RGB_WHITE 0xFFFFFF
@@ -82,7 +82,7 @@ typedef struct	s_env
 
 void			keycode_cont_cont(int keycode, t_env *env);
 void			key_code_cont(int keycode, t_env *env);
-int				exit_hook(t_env *env);
+int				exit_hook(void);
 void			map(t_env *env);
 char			**create_map(void);
 void			start_mlx(t_env *env);

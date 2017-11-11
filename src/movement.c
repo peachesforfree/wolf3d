@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_key_events.c                                   :+:      :+:    :+:   */
+/*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbalcort <sbalcort@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:06:01 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/10/02 14:32:40 by sbalcort         ###   ########.fr       */
+/*   Updated: 2017/11/10 21:13:49 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		key_hook(int keycode, t_env *env)
 {
-	if (keycode == 126 || keycode == 13)
+	if (keycode == KEY_UP || keycode == KEY_W)
 	{
 		if (env->worldmap[(int)(env->posx + env->dirx * env->movespeed)]
 				[(int)(env->posy)] == 0)
@@ -24,7 +24,7 @@ int		key_hook(int keycode, t_env *env)
 			env->posy += env->diry * env->movespeed;
 		raycaster(env);
 	}
-	if (keycode == 125 || keycode == 1)
+	if (keycode == KEY_DOWN || keycode == KEY_S)
 	{
 		if (env->worldmap[(int)(env->posx - env->dirx * env->movespeed)]
 				[(int)(env->posy)] == 0)
@@ -42,7 +42,7 @@ int		key_hook(int keycode, t_env *env)
 
 void	keycode_cont_cont(int keycode, t_env *env)
 {
-	if (keycode == 124 || keycode == 2)
+	if (keycode == KEY_RIGHT || keycode == KEY_D)
 	{
 		env->olddirx = env->dirx;
 		env->dirx = env->dirx * cos(-(env->rotspeed)) -
@@ -60,7 +60,7 @@ void	keycode_cont_cont(int keycode, t_env *env)
 
 void	key_code_cont(int keycode, t_env *env)
 {
-	if (keycode == 123 || keycode == 0)
+	if (keycode == KEY_LEFT || keycode == KEY_A)
 	{
 		env->olddirx = env->dirx;
 		env->dirx = env->dirx * cos(env->rotspeed) -
@@ -74,12 +74,14 @@ void	key_code_cont(int keycode, t_env *env)
 			env->planey * cos(env->rotspeed);
 		raycaster(env);
 	}
-	if (keycode == 53)
+	if (keycode == 53){
+		system("killall afplay");
 		exit(0);
+	}
 }
 
-int		exit_hook(t_env *env)
+int		exit_hook(void)
 {
-	(void)env;
+	system("killall afplay");
 	exit(0);
 }

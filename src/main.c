@@ -6,11 +6,15 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 16:59:39 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/10 11:08:09 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/10 21:14:21 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf3d.h"
+
+/*
+**	Map Continue
+*/
 
 void			create_map_cont(char **map)
 {
@@ -23,6 +27,10 @@ void			create_map_cont(char **map)
 	map[23] = ft_strdup("11111111111111111111111");
 }
 
+/*
+**	Map
+*/
+
 char			**create_map(void)
 {
 	char		**map;
@@ -33,7 +41,7 @@ char			**create_map(void)
 	map[2] = ft_strdup("100000000000000000000001");
 	map[3] = ft_strdup("100000000000000000000001");
 	map[4] = ft_strdup("100000000000000000000001");
-	map[5] = ft_strdup("100011111000021111000001");
+	map[5] = ft_strdup("100011111000011111000001");
 	map[6] = ft_strdup("100010000000000001000001");
 	map[7] = ft_strdup("100010000000000001000001");
 	map[8] = ft_strdup("100010011111111001000001");
@@ -96,6 +104,7 @@ int				main(void)
 	env.rotspeed = .08;
 	env.movespeed = .5;
 	map(&env);
+	system("afplay assets/Super_Mario_Bros_Overworld.mp3&");
 	start_mlx(&env);
 	mlx_key_hook(env.win, &key_hook, &env);
 	mlx_do_key_autorepeaton(env.mlx);
