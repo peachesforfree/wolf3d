@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:06:01 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/10 21:13:49 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/10 22:20:08 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		key_hook(int keycode, t_env *env)
 	keycode_cont_cont(keycode, env);
 	key_code_cont(keycode, env);
 	raycaster(env);
+	(env->help == 1) ? help_text(env) : (0);
 	return (0);
 }
 
@@ -56,6 +57,7 @@ void	keycode_cont_cont(int keycode, t_env *env)
 			env->planey * cos(-env->rotspeed);
 		raycaster(env);
 	}
+	((keycode == KEY_H) && (env->help == 1)) ? env->help = 0 : (0);
 }
 
 void	key_code_cont(int keycode, t_env *env)

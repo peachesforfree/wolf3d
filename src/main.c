@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 16:59:39 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/10 21:14:21 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/11 00:47:41 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,9 @@ int				main(void)
 	env.h = WIN_Y;
 	env.rotspeed = .08;
 	env.movespeed = .5;
+	env.help = 1;
 	map(&env);
-	system("afplay assets/Super_Mario_Bros_Overworld.mp3&");
+	system("afplay assets/Zelda.mp3&");
 	start_mlx(&env);
 	mlx_key_hook(env.win, &key_hook, &env);
 	mlx_do_key_autorepeaton(env.mlx);
@@ -112,6 +113,7 @@ int				main(void)
 	mlx_hook(env.win, 2, 0, &key_hook, &env);
 	mlx_hook(env.win, 17, 0, &exit_hook, &env);
 	raycaster(&env);
+	help_text(&env);
 	mlx_loop(env.mlx);
 	return (0);
 }

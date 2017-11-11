@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:52:10 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/10 21:20:03 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/10 22:11:59 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ typedef struct	s_env
 	int			drawstart;
 	int			drawend;
 	int			xx;
+	int			help;
 }				t_env;
 
 void			keycode_cont_cont(int keycode, t_env *env);
@@ -97,5 +98,6 @@ void			movement(t_env *env);
 void			declarations(t_env *env);
 void			dda_algorithm(t_env *env);
 int				expose_hook(t_env *env);
+void			help_text(t_env *env);
 
 #endif
