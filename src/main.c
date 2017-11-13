@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 16:59:39 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/11 00:47:41 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/12 17:54:46 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,21 @@ void			map(t_env *env)
 		free(test[i]);
 }
 
+void			init(t_env *env)
+{
+	env->posx = 3;
+	env->posy = 3;
+	env->dirx = -1;
+	env->diry = 0;
+	env->planex = 0;
+	env->planey = 0.66;
+	env->w = WIN_X;
+	env->h = WIN_Y;
+	env->rotspeed = .08;
+	env->movespeed = 0.5;
+	env->run = 1;
+}
+
 /*
 **	Sets position and the direction of player
 **	Sets rotation speed and movement speed
@@ -93,17 +108,7 @@ int				main(void)
 {
 	t_env	env;
 
-	env.posx = 3;
-	env.posy = 3;
-	env.dirx = -1;
-	env.diry = 0;
-	env.planex = 0;
-	env.planey = 0.66;
-	env.w = WIN_X;
-	env.h = WIN_Y;
-	env.rotspeed = .08;
-	env.movespeed = .5;
-	env.help = 1;
+	init(&env);
 	map(&env);
 	system("afplay assets/Zelda.mp3&");
 	start_mlx(&env);

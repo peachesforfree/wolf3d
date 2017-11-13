@@ -6,7 +6,7 @@
 /*   By: gaguirre <gaguirre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:27:27 by gaguirre          #+#    #+#             */
-/*   Updated: 2017/11/10 20:29:18 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/12 17:18:54 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@
 # define KEY_UP 126
 # define KEY_STDEQU 24
 # define KEY_STDMIN 27
-# define KEY_LEFTSHIFT 26
+# define KEY_LEFTSHIFT 257
 
 typedef struct	s_keys
 {
