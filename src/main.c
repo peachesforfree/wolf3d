@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 16:59:39 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/10 11:08:09 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/14 08:08:24 by sbalcort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char			**create_map(void)
 	map[14] = ft_strdup("10001000000000000100001");
 	map[15] = ft_strdup("10001000000000000100001");
 	map[16] = ft_strdup("10001111111111111100001");
-	map[17] = ft_strdup("10000000000000000000001");
 	create_map_cont(map);
 	return (map);
 }
@@ -72,13 +71,13 @@ void			map(t_env *env)
 	i = -1;
 	while (++i < 24)
 		free(test[i]);
+	free(test);
 }
 
 /*
-**	Sets position and the direction of player
-**	Sets rotation speed and movement speed
-**	Uses map function to set map (Function above)
-**
+**Sets position and the direction of player
+**Sets rotation speed and movement speed
+**Uses map function to set map (Function above)
 */
 
 int				main(void)
