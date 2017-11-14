@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   keys.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaguirre <gio_aguirre19@yahoo.com>         +#+  +:+       +#+        */
+/*   By: gaguirre <gaguirre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:27:27 by gaguirre          #+#    #+#             */
-/*   Updated: 2017/11/10 11:28:12 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/12 17:18:54 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef KEYS_H
 # define KEYS_H
 
+# define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
 # define KEY_F 3
@@ -29,16 +30,16 @@
 # define KEY_R 15
 # define KEY_Y 16
 # define KEY_T 17
-# define KEY_ONE 18
-# define KEY_TWO 19
-# define KEY_THREE 20
-# define KEY_FOUR 21
-# define KEY_SIX 22
-# define KEY_FIVE 23
-# define KEY_NINE 25
-# define KEY_SEVEN 26
-# define KEY_EIGHT 28
-# define KEY_ZERO 29
+# define KEY_ONE 83
+# define KEY_TWO 84
+# define KEY_THREE 85
+# define KEY_FOUR 86
+# define KEY_SIX 87
+# define KEY_FIVE 88
+# define KEY_NINE 89
+# define KEY_SEVEN 90
+# define KEY_EIGHT 92
+# define KEY_ZERO 82
 # define KEY_BRACE_R 30
 # define KEY_O 31
 # define KEY_U 32
@@ -61,6 +62,7 @@
 # define KEY_UP 126
 # define KEY_STDEQU 24
 # define KEY_STDMIN 27
+# define KEY_LEFTSHIFT 257
 
 typedef struct	s_keys
 {
@@ -106,6 +108,7 @@ typedef struct	s_keys
 	int tab : 1;
 	int plus : 1;
 	int minus : 1;
+	int	lshift : 1;
 	int left : 1;
 	int right : 1;
 	int down : 1;

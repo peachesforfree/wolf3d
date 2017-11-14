@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 23:11:24 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/10 11:50:46 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/13 21:47:03 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void		projection(t_env *env)
 	env->lineheight = abs((int)(env->h / env->perpwalldist));
 	env->drawstart = -(env->lineheight) / 2 + env->h / 2;
 	env->drawend = env->lineheight / 2 + env->h / 2;
-	if (env->drawstart < 0)
-		env->drawstart = 0;
-	if (env->drawend >= env->h)
-		env->drawend = env->h - 1;
+	(env->drawstart < 0) ? env->drawstart = 0 : (0);
+	(env->drawend >= env->h) ? env->drawend = env->h - 1 : (0);
 }
