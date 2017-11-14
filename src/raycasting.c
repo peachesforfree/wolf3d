@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:38:37 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/13 22:38:48 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/14 08:42:18 by sbalcort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void		raycaster(t_env *env)
 		dda_algorithm(env);
 		projection(env);
 		color_selection(env);
-
 		draw_line_to_image(env);
 		env->x++;
 	}

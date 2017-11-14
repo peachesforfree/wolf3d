@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:37:06 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/13 19:40:40 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/14 08:34:43 by sbalcort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,11 @@ void		start_mlx(t_env *env)
 
 void		help_text(t_env *env)
 {
-	mlx_string_put(env->mlx, env->win, 10, 10, 0xFFFFFF ,"W A S D or Arrows to Move");
-	mlx_string_put(env->mlx, env->win, 10, 30, 0xFFFFFF ,"Hold Left Shift to Run");
-	mlx_string_put(env->mlx, env->win, 10, 50, 0xFFFFFF ,"ESC to Quit");
+	mlx_string_put(env->mlx, env->win, 10, 10, 0xFFFFFF,
+			"W A S D or Arrows to Move");
+	mlx_string_put(env->mlx, env->win, 10, 30, 0xFFFFFF,
+			"Hold Left Shift to Run");
+	mlx_string_put(env->mlx, env->win, 10, 50, 0xFFFFFF, "ESC to Quit");
 }
 
 void		clear_window(t_env *env)

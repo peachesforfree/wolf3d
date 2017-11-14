@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:52:10 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/13 21:42:32 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/14 08:31:52 by sbalcort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ typedef struct	s_env
 	double		deltadisty;
 	double		perpwalldist;
 	double		rotspeed;
-	double		floorXwall;
-	double		floorYwall;
 	char		**map;
 	int			stepx;
 	int			stepy;
@@ -93,10 +91,10 @@ void			declarations(t_env *env);
 void			dda_algorithm(t_env *env);
 int				expose_hook(t_env *env);
 void			help_text(t_env *env);
-void     	up(t_env *env);
-void     	down(t_env *env);
-void     	left(t_env *env);
-void     	right(t_env *env);
-void     	run(t_env *env);
+void			up(t_env *env);
+void			down(t_env *env);
+void			left(t_env *env);
+void			right(t_env *env);
+void			run(t_env *env);
 
 #endif
