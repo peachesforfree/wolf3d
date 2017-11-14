@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:37:06 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/11 00:46:34 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/13 19:40:40 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ void		start_mlx(t_env *env)
 		exit(0);
 	}
 }
+
+/*
+**	Text on top left
+*/
 
 void		help_text(t_env *env)
 {

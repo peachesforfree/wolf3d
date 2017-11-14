@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 00:52:10 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/12 17:43:49 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/13 21:42:32 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@
 # define WIN_Y 900
 # define MAPWIDTH 24
 # define MAPHEIGHT 20
-# define RGB_WHITE 0xFFFFFF
-# define RGB_RED 0xFF0000
-# define RGB_GREEN 0x00FF00
-# define RGB_BLUE 0x0000FF
-# define RGB_YELLOW 0xFFFF00
 
 typedef struct	s_env
 {
@@ -63,6 +58,8 @@ typedef struct	s_env
 	double		deltadisty;
 	double		perpwalldist;
 	double		rotspeed;
+	double		floorXwall;
+	double		floorYwall;
 	char		**map;
 	int			stepx;
 	int			stepy;
@@ -80,7 +77,6 @@ typedef struct	s_env
 	int			run;
 }				t_env;
 
-void			key_code_cont(int keycode, t_env *env);
 int				exit_hook(void);
 void			map(t_env *env);
 char			**create_map(void);

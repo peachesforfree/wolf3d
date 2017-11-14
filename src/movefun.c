@@ -6,11 +6,15 @@
 /*   By: gaguirre <gaguirre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 22:30:14 by gaguirre          #+#    #+#             */
-/*   Updated: 2017/11/12 17:54:32 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/13 19:41:36 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf3d.h"
+
+/*
+**	Controls
+*/
 
 void     up(t_env *env)
 {

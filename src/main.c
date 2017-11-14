@@ -6,7 +6,7 @@
 /*   By: sbalcort <sbalcort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 16:59:39 by sbalcort          #+#    #+#             */
-/*   Updated: 2017/11/12 17:54:46 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/11/13 19:39:33 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,10 @@ void			map(t_env *env)
 	while (++i < 24)
 		free(test[i]);
 }
+
+/*
+**	Struct Variable Initialization
+*/
 
 void			init(t_env *env)
 {
